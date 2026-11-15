@@ -98,7 +98,7 @@ class Tool(Protocol):
 | Поле | Значение |
 |---|---|
 | `name` | `structure` |
-| `params_schema` | `{"type": "object", "required": ["root"], "properties": {"root": {"type": "string", "pattern": "^[^/].*/$"}}}` |
+| `params_schema` | `{"type": "object", "required": ["root"], "properties": {"root": {"type": "string", "pattern": "^(?!.*(?:^|/)\\.\\.(?:/|$))[^/].*/$"}}}` |
 | Читает | `list_files()` |
 | `passed` | Все пути начинаются с `root` |
 | `failed` | Для каждого файла вне `root`: `Problem(path, "файл вне вашей папки")` |
